@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -18,6 +19,6 @@ module.exports = {
     'react',
   ],
   rules: {
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', (process.platform === 'win32' ? 'windows' : 'unix')],
   },
 };
