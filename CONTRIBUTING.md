@@ -24,9 +24,10 @@ Some things that will increase the chance that your pull request is accepted:
 
 * Write tests.
 * Follow our [style guide].
-* Write a good commit message.
+* Write a good [commit message].
 
 [style guide]: https://github.com/airbnb/javascript/tree/master/react
+[commit message]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
 ### After the pull request is acepted and merged to the develop remote branch, you can finish the feautre on your local branch:
 
