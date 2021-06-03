@@ -9,6 +9,7 @@ Before starting, make sure your computer has up-to-date versions of the followin
 * Node/NPM (choose the latest version)
 * Git
 * Visual Studio Code as our main IDE.
+* ESLint as an extension for your Visual Studio Code.
 
 ## Installing and running the project
 * Clone the repository in the directory of your preference using git clone https://github.com/alfredoLopezpintos/aplicacion-react.git
