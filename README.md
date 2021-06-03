@@ -2,7 +2,7 @@
 
 Welcome. Below you can find more informationn about the project.
 
-## Required Software
+## Required Software :computer:
 
 Before starting, make sure your computer has up-to-date versions of the following installed:
 
@@ -11,7 +11,7 @@ Before starting, make sure your computer has up-to-date versions of the followin
 * Visual Studio Code as our main IDE.
 * ESLint as an extension for your Visual Studio Code.
 
-## Installing and running the project
+## Installing and running the project :zap:
 * Clone the repository in the directory of your preference using git clone https://github.com/alfredoLopezpintos/aplicacion-react.git
 * Type cd aplicacion-react to change your current directory to the repository folder.
 * Open this repository with Visual Studio Code.
@@ -20,7 +20,7 @@ Before starting, make sure your computer has up-to-date versions of the followin
 ### This will load the following site:
  ** INSERT IMAGE **
 
-Perfect, you are ready to start. Happy coding!
+Perfect, you are ready to start. Happy coding! :smiley:
 
-## Technical decisions made by the group
+## Technical decisions made by the group :ballot_box_with_check:
 Here we will deliver more info about anything needed or important related to the project.
