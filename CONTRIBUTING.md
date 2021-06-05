@@ -8,7 +8,7 @@ When contributing , please first discuss the change you wish to make via issue, 
 
 ## Branch names
 
-This project follows the Gitflow default branch names. If you want to know more, please follow the link: [Gitflow default branching names]
+This project follows the default branch names from Gitflow. If you want to know more, please follow the link: [Gitflow default branching names]
 
 1. Production branch: `main/`
 2. Development branch: `develop/`
@@ -26,7 +26,7 @@ Every contributor will have to agree on merging new changes. Some contributions 
 
 ## Git merge strategy
 
-We will always merge to `develop` first. And when it's ready, to the `main` branch. Avoiding merging as possible. But if necessary, we will follow the
+We will always merge to `develop` first. And when it's ready, to the `main` branch. Avoiding merging as possible. But if necessary, we will follow the 
 
 ## Pull Request Process
 
@@ -40,7 +40,7 @@ We will always merge to `develop` first. And when it's ready, to the `main` bran
 
 ### Submit a pull request
 
-We do not guarantee your contributions will be added to this repository. Please take into account this before making any changes.
+We do not guarantee your contributions will be added to this repository. Please take this into account before making any changes.
 
 Some things that will increase the chance that your pull request is accepted:
 
