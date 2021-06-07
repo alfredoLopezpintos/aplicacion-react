@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const testSlice = createSlice({
-  name: 'postITs',
-  initialState: [
-    { id: 1, textContent: 'postIT1', deleted: false },
-    { id: 2, textContent: 'postIT2', deleted: false },
-    { id: 3, textContent: 'postIT3', deleted: false },
-  ],
+  name: 'postits',
+  initialState: {
+    posts: [
+      { id: 1, textContent: 'postIT1', deleted: false },
+      { id: 2, textContent: 'postIT2', deleted: false },
+      { id: 3, textContent: 'postIT3', deleted: false },
+    ],
+  },
   reducers: {
     addPostIT: (state, action) => {
       const newPostIT = {

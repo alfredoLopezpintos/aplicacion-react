@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
 import postITReducer from './testSlice';
 
-export default configureStore({
+const store = configureStore({
   reducer: {
     postITs: postITReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
+
+export default store;

@@ -4,7 +4,7 @@ import './Home.css';
 import { testLog } from '../../Redux/testSlice';
 import PostITs from '../PostITs';
 
-function Home() {
+export const Home = () => {
   const dispatch = useDispatch();
   return (
     <div className="Home">
@@ -21,6 +21,6 @@ function Home() {
       </header>
     </div>
   );
-}
+};
 
 export default Home;

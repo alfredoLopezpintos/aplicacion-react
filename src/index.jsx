@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
-import Home from './components/Home/Index';
+import HomeApp from './components/Home/Index';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Home />
+      <HomeApp />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
