@@ -6,11 +6,13 @@ import AddPost from '../AddPostIT';
 
 export const PostITs = () => {
   const { posts } = useSelector((state) => state.postITs);
-  const result = posts.map(({ id, textContent, deleted }) => (
+  const result = posts.map(({
+    id, textContent, date, deleted,
+  }) => (
     <div className="note" key={id}>
       <span>{ textContent }</span>
       <div className="note-footer">
-        <small>{ textContent }</small>
+        <small>{ date }</small>
         <small>{ deleted }</small>
         <MdDeleteForever className="delete-icon" size="1.3em" />
       </div>
