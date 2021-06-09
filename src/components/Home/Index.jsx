@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import './Home.css';
 import { testLog } from '../../Redux/testSlice';
-import PostITs from '../PostITs';
+import Posts from '../PostITs';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export const Home = () => {
     <div className="Home">
       <header className="Home-header">
         <div className="container">
-          <PostITs />
+          <Posts />
         </div>
         <button
           type="button"
