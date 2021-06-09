@@ -25,7 +25,7 @@ textarea:focus {
     padding: 5px 10px 5px 10px;
 }
 
-.save.hover {
+.save:hover {
     background-color: #ededed;
     cursor: pointer;
 }
