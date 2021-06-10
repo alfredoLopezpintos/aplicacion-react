@@ -6,10 +6,17 @@ import './PostIT.css';
 
 export const AddPostIT = () => {
   const dispatch = useDispatch();
+  const characterLimit = 200;
   const value = useSelector((state) => state.AddPostIT);
   const handleAddPostIT = () => {
-    if (value.value.toString().trim().length > 0) {
+    if (value.value.trim().length > 0) {
       dispatch(addPostIT(value));
+      handleNewPostITChange('');
+    }
+  };
+  const handleChange = (event) => {
+    if (characterLimit - event.target.value.length >= 0) {
+      dispatch(handleNewPostITChange(event.target.value));
       handleNewPostITChange('');
     }
   };
@@ -19,10 +26,14 @@ export const AddPostIT = () => {
         cols="10"
         rows="8"
         placeholder="Type here..."
-        onChange={(event) => dispatch(handleNewPostITChange(event.target.value))}
+        onChange={handleChange}
       />
       <div className="note-footer">
-        <small>200 Remaining</small>
+        <small>
+          {characterLimit - value.value.length}
+          {' '}
+          Remaining
+        </small>
         <button
           type="button"
           className="save"

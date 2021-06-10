@@ -26,9 +26,13 @@ const postITsSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.posts = [...state.posts, newPostIT];
     },
+    deletePostIT: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
+      state.posts[action.payload - 1].deleted = true;
+    },
   },
 });
 
-export const { addPostIT, testLog } = postITsSlice.actions;
+export const { addPostIT, deletePostIT } = postITsSlice.actions;
 
 export default postITsSlice.reducer;

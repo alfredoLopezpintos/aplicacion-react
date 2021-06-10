@@ -1,20 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './PostITs.css';
 import { MdDeleteForever } from 'react-icons/md';
+import { deletePostIT } from '../../Redux/postITsSlice';
 import AddPost from '../AddPostIT';
 
 export const PostITs = () => {
+  const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.postITs);
   const result = posts.map(({
     id, textContent, date, deleted,
-  }) => (
+  }) => !deleted && (
     <div className="note" key={id}>
       <span>{ textContent }</span>
       <div className="note-footer">
         <small>{ date }</small>
-        <small>{ deleted }</small>
-        <MdDeleteForever className="delete-icon" size="1.3em" />
+        <MdDeleteForever onClick={() => dispatch(deletePostIT(id))} className="delete-icon" size="1.3em" />
       </div>
     </div>
   ));

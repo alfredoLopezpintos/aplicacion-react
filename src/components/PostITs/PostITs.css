@@ -30,6 +30,10 @@ textarea:focus {
     cursor: pointer;
 }
 
+.delete-icon {
+    cursor: pointer;
+}
+
 .note {
     background-color: #fef68a;
     border-radius: 10px;
