@@ -1,12 +1,22 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Home.css';
-import { addPostIT } from '../../Redux/postITsSlice';
+import { reloadPostITs } from '../../Redux/postITsSlice';
 import Posts from '../PostITs';
 
 export const Home = () => {
   const { posts } = useSelector((state) => state.postITs);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem('react-postits-app-data'));
+
+    if (savedNotes) {
+      savedNotes.forEach((element) => {
+        dispatch(reloadPostITs(element));
+      });
+    }
+  }, []);
 
   useEffect(() => {
     try {
@@ -16,16 +26,6 @@ export const Home = () => {
       console.log(err);
     }
   }, [posts]);
-
-  useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem('react-postits-app-data'));
-
-    if (savedNotes) {
-      savedNotes.forEach((element) => {
-        dispatch(addPostIT(element, 1));
-      });
-    }
-  }, []);
   return (
     <div className="Home">
       <header className="Home-header">
