@@ -26,6 +26,7 @@ export const AddPostIT = () => {
         cols="10"
         rows="8"
         placeholder="Type here..."
+        maxLength="200"
         onChange={handleChange}
       />
       <div className="note-footer">
