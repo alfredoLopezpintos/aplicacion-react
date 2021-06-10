@@ -10,7 +10,7 @@ export const AddPostIT = () => {
   const value = useSelector((state) => state.AddPostIT);
   const handleAddPostIT = () => {
     if (value.value.trim().length > 0) {
-      dispatch(addPostIT(value));
+      dispatch(addPostIT(value, 1));
       handleNewPostITChange('');
     }
   };
