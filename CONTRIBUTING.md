@@ -26,7 +26,11 @@ Every contributor will have to agree on merging new changes. Some contributions 
 
 ## Git merge strategy
 
-We will always merge to `develop` first. And when it's ready, to the `main` branch. Avoiding merging as possible. But if necessary, we will follow the 
+We will always merge to `develop` first. And when it's ready, to the `main` branch. Avoiding merging as possible.
+
+We will be using the "Recursive" merge strategy, where we won't work on the `main` branch until the app is ready to production.
+The work flow will be divided on the `feature` branch, for each feature we are working on; for later merging it to the `develop`
+branch, where all the features will be united and, finally, merging to `main`.
 
 ## Pull Request Process
 
