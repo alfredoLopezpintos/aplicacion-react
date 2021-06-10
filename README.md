@@ -1,4 +1,4 @@
-Welcome. Below you can find more informationn about the project.
+Welcome. Below you can find more information about the project.
 
 <!-- TODO: MAKE PUBLIC WHEN LINK (Github-page) IS READY -->
 <!--You can see the running app following this link: Github-page
