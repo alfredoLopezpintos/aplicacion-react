@@ -8,14 +8,12 @@ import AddPost from '../AddPostIT';
 export const PostITs = () => {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.postITs);
-  const result = posts.map(({
-    id, textContent, date, deleted,
-  }) => !deleted && (
-    <div className="note" key={id}>
-      <span>{ textContent }</span>
+  const result = posts.map((post) => !post.deleted && (
+    <div className="note" key={post.id}>
+      <span>{ post.textContent }</span>
       <div className="note-footer">
-        <small>{ date }</small>
-        <MdDelete onClick={() => dispatch(deletePostIT(id))} className="delete-icon" size="1.3em" />
+        <small>{ post.date }</small>
+        <MdDelete onClick={() => dispatch(deletePostIT(post))} className="delete-icon" size="1.3em" />
       </div>
     </div>
   ));

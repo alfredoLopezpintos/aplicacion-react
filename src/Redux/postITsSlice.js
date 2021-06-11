@@ -17,8 +17,15 @@ const postITsSlice = createSlice({
       state.posts = [...state.posts, newPostIT];
     },
     deletePostIT: (state, action) => {
+      const newPostIT = {
+        id: action.payload.id,
+        textContent: action.payload.textContent,
+        date: action.payload.date,
+        deleted: true,
+      };
+      const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
       // eslint-disable-next-line no-param-reassign
-      state.posts[action.payload - 1].deleted = true;
+      state.posts = [...newPosts, newPostIT];
     },
     reloadPostITs: (state, action) => {
       const newPostIT = {
