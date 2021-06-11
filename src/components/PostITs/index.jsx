@@ -18,10 +18,10 @@ export const PostITs = () => {
     </div>
   ));
   return (
-    <>
+    <div className="notes-list">
       {result}
       <AddPost />
-    </>
+    </div>
   );
 };
 

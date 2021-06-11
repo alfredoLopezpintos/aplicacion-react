@@ -12,6 +12,14 @@
 .note.new {
     background-color: #67d7cc;
 }
+.notes-list {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(250px, 1fr)
+	);
+}
 
 textarea {
     border: none;
