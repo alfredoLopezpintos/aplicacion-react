@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './PostITs.css';
-import { MdDeleteForever } from 'react-icons/md';
+import { MdDelete } from 'react-icons/md';
 import { deletePostIT } from '../../Redux/postITsSlice';
 import AddPost from '../AddPostIT';
 
@@ -15,7 +15,7 @@ export const PostITs = () => {
       <span>{ textContent }</span>
       <div className="note-footer">
         <small>{ date }</small>
-        <MdDeleteForever onClick={() => dispatch(deletePostIT(id))} className="delete-icon" size="1.3em" />
+        <MdDelete onClick={() => dispatch(deletePostIT(id))} className="delete-icon" size="1.3em" />
       </div>
     </div>
   ));

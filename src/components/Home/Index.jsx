@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Home.css';
 import { reloadPostITs } from '../../Redux/postITsSlice';
 import Posts from '../PostITs';
+import Header from '../Header/index';
 
 export const Home = () => {
   const { posts } = useSelector((state) => state.postITs);
@@ -30,6 +31,7 @@ export const Home = () => {
     <div className="Home">
       <header className="Home-header">
         <div className="container">
+          <Header />
           <Posts />
         </div>
       </header>
