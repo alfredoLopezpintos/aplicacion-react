@@ -1,15 +1,40 @@
-import React from 'react';
+import { React, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './Home.css';
+import { reloadPostITs } from '../../Redux/postITsSlice';
 import Posts from '../PostITs';
 
-export const Home = () => (
-  <div className="Home">
-    <header className="Home-header">
-      <div className="container">
-        <Posts />
-      </div>
-    </header>
-  </div>
-);
+export const Home = () => {
+  const { posts } = useSelector((state) => state.postITs);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem('react-postits-app-data'));
+
+    if (savedNotes) {
+      savedNotes.forEach((element) => {
+        dispatch(reloadPostITs(element));
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('react-postits-app-data', JSON.stringify(posts));
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.log(err);
+    }
+  }, [posts]);
+  return (
+    <div className="Home">
+      <header className="Home-header">
+        <div className="container">
+          <Posts />
+        </div>
+      </header>
+    </div>
+  );
+};
 
 export default Home;
