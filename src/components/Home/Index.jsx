@@ -1,8 +1,11 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Home.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { reloadPostITs } from '../../Redux/postITsSlice';
-import Posts from '../PostITs';
+import Tab from '../ChangeTab/index';
+import PostsComponent from '../PostITs/index';
+import TrashComponent from '../TrashBin/index';
 import Header from '../Header/index';
 
 export const Home = () => {
@@ -32,7 +35,13 @@ export const Home = () => {
       <header className="Home-header">
         <div className="container">
           <Header />
-          <Posts />
+          <Tab />
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={PostsComponent}><PostsComponent /></Route>
+              <Route exact path="/TrashBin" component={TrashComponent}><TrashComponent /></Route>
+            </Switch>
+          </BrowserRouter>
         </div>
       </header>
     </div>
