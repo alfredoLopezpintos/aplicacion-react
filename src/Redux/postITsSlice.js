@@ -27,6 +27,10 @@ const postITsSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.posts = [...newPosts, newPostIT];
     },
+    deleteForeverPostIT: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
+      state.posts = state.posts.filter((post) => post.id !== action.payload);
+    },
     reloadPostITs: (state, action) => {
       const newPostIT = {
         id: action.payload.id,
@@ -40,6 +44,8 @@ const postITsSlice = createSlice({
   },
 });
 
-export const { addPostIT, deletePostIT, reloadPostITs } = postITsSlice.actions;
+export const {
+  addPostIT, deletePostIT, deleteForeverPostIT, reloadPostITs,
+} = postITsSlice.actions;
 
 export default postITsSlice.reducer;
