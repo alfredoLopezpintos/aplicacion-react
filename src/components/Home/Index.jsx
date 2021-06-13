@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Home.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { reloadPostITs } from '../../Redux/postITsSlice';
-import Tab from '../ChangeTab/index';
 import PostsComponent from '../PostITs/index';
 import TrashComponent from '../TrashBin/index';
 import HeaderComponent from '../Header/index';
@@ -36,13 +35,10 @@ export const Home = () => {
         <header className="Home-header">
           <div className="container">
             <HeaderComponent />
-            <Tab />
-
             <Switch>
               <Route path="/" exact component={PostsComponent} />
               <Route path="/TrashBin" component={TrashComponent} />
             </Switch>
-
           </div>
         </header>
       </div>
