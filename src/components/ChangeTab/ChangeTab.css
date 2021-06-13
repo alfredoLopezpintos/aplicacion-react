@@ -1,5 +1,23 @@
-.test {
+.link {
+    display: flex;
+    list-style-type: none;
+    font-size: 1.8rem;
+    /* text-decoration: none; */
+    /* color: black; */
+    color: black;
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.all {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    list-style-type: none;
+    justify-content: space-evenly;
 }
+
+/* .ul .li svg {
+    font-size: 2.5rem;
+} */
