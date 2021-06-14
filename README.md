@@ -22,7 +22,7 @@ Before starting, make sure your computer has up-to-date versions of the followin
 * Type `npm install` to install all of the project dependencies.
 * Start the project locally running: `npm start`
 ### This will load the following site:
- ** INSERT IMAGE **
+![Post_IT_Home](https://user-images.githubusercontent.com/84357625/121825858-10d75500-cc8b-11eb-9b46-1d997a83b05b.PNG)
 
 Perfect, you are ready to start. Happy coding! :smiley:
 
