@@ -10,19 +10,20 @@ export const AddPostIT = () => {
   const value = useSelector((state) => state.AddPostIT);
   const handleAddPostIT = () => {
     if (value.value.trim().length > 0) {
-      dispatch(addPostIT(value, 1));
-      handleNewPostITChange('');
+      dispatch(addPostIT(value));
+      document.getElementById(1000).value = '';
+      dispatch(handleNewPostITChange(''));
     }
   };
   const handleChange = (event) => {
     if (characterLimit - event.target.value.length >= 0) {
       dispatch(handleNewPostITChange(event.target.value));
-      handleNewPostITChange('');
     }
   };
   return (
     <div className="note new">
       <textarea
+        id="1000"
         cols="10"
         rows="8"
         placeholder="Type here..."
