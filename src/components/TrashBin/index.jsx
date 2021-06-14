@@ -15,7 +15,15 @@ export const TrashBin = () => {
         <div>
           <MdUndo onClick={() => dispatch(recoverPostIT(post))} className="delete-icon" size="1.3em" />
           <div className="divider" />
-          <MdDeleteForever onClick={() => dispatch(deleteForeverPostIT(post.id))} className="delete-icon" size="1.3em" />
+          <MdDeleteForever
+            onClick={() => {
+              // eslint-disable-next-line no-restricted-globals
+              const response = confirm('Are you sure you want to delete this PostIT forever?\nYou will not be able to recover it!');
+              if (response) dispatch(deleteForeverPostIT(post.id));
+            }}
+            className="delete-icon"
+            size="1.3em"
+          />
         </div>
       </div>
     </div>
