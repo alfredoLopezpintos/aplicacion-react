@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { MdDeleteForever } from 'react-icons/md';
-import { deleteForeverPostIT } from '../../Redux/postITsSlice';
+import { MdDeleteForever, MdUndo } from 'react-icons/md';
+import { deleteForeverPostIT, recoverPostIT } from '../../Redux/postITsSlice';
 import './TrashBin.css';
 
 export const TrashBin = () => {
@@ -12,7 +12,11 @@ export const TrashBin = () => {
       <span>{ post.textContent }</span>
       <div className="note-footer">
         <small>{ post.date }</small>
-        <MdDeleteForever onClick={() => dispatch(deleteForeverPostIT(post.id))} className="delete-icon" size="1.3em" />
+        <div>
+          <MdUndo onClick={() => dispatch(recoverPostIT(post))} className="delete-icon" size="1.3em" />
+          <div className="divider" />
+          <MdDeleteForever onClick={() => dispatch(deleteForeverPostIT(post.id))} className="delete-icon" size="1.3em" />
+        </div>
       </div>
     </div>
   ));

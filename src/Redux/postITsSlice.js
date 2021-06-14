@@ -31,6 +31,17 @@ const postITsSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.posts = state.posts.filter((post) => post.id !== action.payload);
     },
+    recoverPostIT: (state, action) => {
+      const newPostIT = {
+        id: action.payload.id,
+        textContent: action.payload.textContent,
+        date: action.payload.date,
+        deleted: false,
+      };
+      const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
+      // eslint-disable-next-line no-param-reassign
+      state.posts = [...newPosts, newPostIT];
+    },
     reloadPostITs: (state, action) => {
       const newPostIT = {
         id: action.payload.id,
@@ -45,7 +56,7 @@ const postITsSlice = createSlice({
 });
 
 export const {
-  addPostIT, deletePostIT, deleteForeverPostIT, reloadPostITs,
+  addPostIT, deletePostIT, deleteForeverPostIT, recoverPostIT, reloadPostITs,
 } = postITsSlice.actions;
 
 export default postITsSlice.reducer;
