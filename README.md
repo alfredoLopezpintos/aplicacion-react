@@ -1,4 +1,6 @@
-Welcome. Below you can find more information about the project.
+# MooveIT BootCamp PostIT App
+
+Welcome. Below you can find more informationn about the project.
 
 <!-- TODO: MAKE PUBLIC WHEN LINK (Github-page) IS READY -->
 <!--You can see the running app following this link: Github-page
@@ -20,9 +22,24 @@ Before starting, make sure your computer has up-to-date versions of the followin
 * Type `npm install` to install all of the project dependencies.
 * Start the project locally running: `npm start`
 ### This will load the following site:
- ** INSERT IMAGE **
+![Post_IT_Home](https://user-images.githubusercontent.com/84357625/121825858-10d75500-cc8b-11eb-9b46-1d997a83b05b.PNG)
 
 Perfect, you are ready to start. Happy coding! :smiley:
 
 ## Technical decisions made by the group :ballot_box_with_check:
 Here we will deliver more info about anything needed or important related to the project.
+### Dependencies
+    "@reduxjs/toolkit": "^1.5.1",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-logger": "^3.0.6",
+    "web-vitals": "^1.1.2"
+All project dependencies have a reason. This project uses React, Redux, React-Router, Jest & Redux Toolkit as a must for the code challenge. Also we are using React icons for a better UI experience and to facilitate the design development of the app. The other dependencies are for development purposes only.
