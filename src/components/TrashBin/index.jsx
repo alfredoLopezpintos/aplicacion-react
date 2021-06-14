@@ -13,7 +13,7 @@ export const TrashBin = () => {
       <div className="note-footer">
         <small>{ post.date }</small>
         <div>
-          <MdUndo onClick={() => dispatch(recoverPostIT(post))} className="delete-icon" size="1.3em" />
+          <MdUndo onClick={() => dispatch(recoverPostIT(post))} className="icon" size="1.3em" />
           <div className="divider" />
           <MdDeleteForever
             onClick={() => {
@@ -21,7 +21,7 @@ export const TrashBin = () => {
               const response = confirm('Are you sure you want to delete this PostIT forever?\nYou will not be able to recover it!');
               if (response) dispatch(deleteForeverPostIT(post.id));
             }}
-            className="delete-icon"
+            className="icon"
             size="1.3em"
           />
         </div>

@@ -1,4 +1,4 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const postITsSlice = createSlice({
   name: 'postits',
@@ -8,8 +8,8 @@ const postITsSlice = createSlice({
   reducers: {
     addPostIT: (state, action) => {
       const newPostIT = {
-        id: nanoid(),
-        textContent: action.payload.value,
+        id: action.payload[1],
+        textContent: action.payload[0],
         date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
         deleted: false,
       };
@@ -42,6 +42,17 @@ const postITsSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.posts = [...newPosts, newPostIT];
     },
+    editPostIT: (state, action) => {
+      const newPostIT = {
+        id: action.payload[1],
+        textContent: action.payload[0],
+        date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
+        deleted: false,
+      };
+      const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
+      // eslint-disable-next-line no-param-reassign
+      state.posts = [...newPosts, newPostIT];
+    },
     reloadPostITs: (state, action) => {
       const newPostIT = {
         id: action.payload.id,
@@ -56,7 +67,7 @@ const postITsSlice = createSlice({
 });
 
 export const {
-  addPostIT, deletePostIT, deleteForeverPostIT, recoverPostIT, reloadPostITs,
+  addPostIT, deletePostIT, deleteForeverPostIT, editPostIT, recoverPostIT, reloadPostITs,
 } = postITsSlice.actions;
 
 export default postITsSlice.reducer;
