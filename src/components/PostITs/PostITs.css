@@ -12,7 +12,7 @@
 .note.new {
     background-color: #67d7cc;
 }
-.note.new.edit {
+.note.edit {
     background-color: #d79467;
 }
 .notes-list {
@@ -61,6 +61,9 @@ textarea:focus {
     cursor: pointer;
 }
 
+.icon {
+    size: "1.3em";
+}
 .icon:hover {
     cursor: pointer;
 }

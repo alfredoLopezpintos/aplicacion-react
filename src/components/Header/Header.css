@@ -16,6 +16,9 @@
 .trash:hover {
     text-decoration: underline;
 }
+.trashIcon {
+    font-size: 2.2rem;
+}
 
 .home {
     color: black;
@@ -24,8 +27,4 @@
 }
 .home:hover {
     text-decoration: underline;
-}
-
-.trashIcon {
-    font-size: 2.2rem;
 }

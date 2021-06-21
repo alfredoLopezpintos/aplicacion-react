@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+/* eslint-disable no-param-reassign */
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const postITsSlice = createSlice({
   name: 'postits',
@@ -8,13 +9,22 @@ const postITsSlice = createSlice({
   reducers: {
     addPostIT: (state, action) => {
       const newPostIT = {
-        id: action.payload[1],
-        textContent: action.payload[0],
+        id: nanoid(),
+        textContent: action.payload.value,
         date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
         deleted: false,
       };
-      // eslint-disable-next-line no-param-reassign
       state.posts = [...state.posts, newPostIT];
+    },
+    editPostIT: (state, action) => {
+      const newPostIT = {
+        id: action.payload.id,
+        textContent: action.payload.textContent,
+        date: action.payload.date,
+        deleted: false,
+      };
+      const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
+      state.posts = [...newPosts, newPostIT];
     },
     deletePostIT: (state, action) => {
       const newPostIT = {
@@ -24,11 +34,9 @@ const postITsSlice = createSlice({
         deleted: true,
       };
       const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
-      // eslint-disable-next-line no-param-reassign
       state.posts = [...newPosts, newPostIT];
     },
     deleteForeverPostIT: (state, action) => {
-      // eslint-disable-next-line no-param-reassign
       state.posts = state.posts.filter((post) => post.id !== action.payload);
     },
     recoverPostIT: (state, action) => {
@@ -39,18 +47,6 @@ const postITsSlice = createSlice({
         deleted: false,
       };
       const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
-      // eslint-disable-next-line no-param-reassign
-      state.posts = [...newPosts, newPostIT];
-    },
-    editPostIT: (state, action) => {
-      const newPostIT = {
-        id: action.payload[1],
-        textContent: action.payload[0],
-        date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
-        deleted: false,
-      };
-      const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
-      // eslint-disable-next-line no-param-reassign
       state.posts = [...newPosts, newPostIT];
     },
     reloadPostITs: (state, action) => {
@@ -60,7 +56,6 @@ const postITsSlice = createSlice({
         date: action.payload.date,
         deleted: action.payload.deleted,
       };
-      // eslint-disable-next-line no-param-reassign
       state.posts = [...state.posts, newPostIT];
     },
   },
