@@ -7,13 +7,14 @@ import './TrashBin.css';
 export const TrashBin = () => {
   const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.postITs);
+
   const result = posts.map((post) => post.deleted && (
     <div className="trash-note" key={post.id}>
       <span>{ post.textContent }</span>
       <div className="note-footer">
         <small>{ post.date }</small>
         <div>
-          <MdUndo onClick={() => dispatch(recoverPostIT(post))} className="delete-icon" size="1.3em" />
+          <MdUndo onClick={() => dispatch(recoverPostIT(post))} className="icon" />
           <div className="divider" />
           <MdDeleteForever
             onClick={() => {
@@ -21,8 +22,7 @@ export const TrashBin = () => {
               const response = confirm('Are you sure you want to delete this PostIT forever?\nYou will not be able to recover it!');
               if (response) dispatch(deleteForeverPostIT(post.id));
             }}
-            className="delete-icon"
-            size="1.3em"
+            className="icon"
           />
         </div>
       </div>

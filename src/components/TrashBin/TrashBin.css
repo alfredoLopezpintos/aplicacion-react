@@ -9,9 +9,3 @@
     justify-content: space-between;
     white-space: pre-wrap;
 }
-
-.divider{
-    width:20px;
-    height:auto;
-    display:inline-block;
-}

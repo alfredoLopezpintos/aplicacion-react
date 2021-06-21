@@ -29,6 +29,7 @@ export const Home = () => {
       console.log(err);
     }
   }, [posts]);
+
   return (
     <Router>
       <div className="Home">
