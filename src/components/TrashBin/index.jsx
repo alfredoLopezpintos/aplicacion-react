@@ -6,7 +6,13 @@ import './TrashBin.css';
 
 export const TrashBin = () => {
   const dispatch = useDispatch();
-  const { posts } = useSelector((state) => state.postITs);
+  let { posts } = useSelector((state) => state.postITs);
+  if (posts.length >= 2) {
+    posts = posts.slice().sort((a, b) => b.system_date - a.system_date);
+    posts.forEach((x) => {
+      console.log(x.system_date);
+    });
+  }
 
   const result = posts.map((post) => post.deleted && (
     <div className="trash-note" key={post.id}>

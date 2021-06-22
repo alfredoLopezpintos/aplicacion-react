@@ -7,11 +7,16 @@ import AddPost from '../AddPostIT';
 import EditPostIt from '../PostITsEdit/index';
 
 export const PostITs = () => {
-  const { posts } = useSelector((state) => state.postITs);
-
+  let { posts } = useSelector((state) => state.postITs);
+  if (posts.length >= 2) {
+    posts = posts.slice().sort((a, b) => b.system_date - a.system_date);
+    posts.forEach((x) => {
+      console.log(x.system_date);
+    });
+  }
   const result = posts.map((post) => !post.deleted && (
     <>
-      <List post={post} />
+      <List post={post} key={post.id} />
     </>
   ));
 
@@ -31,7 +36,7 @@ const List = (...value) => {
   return isEditing
     ? <EditPostIt post={postIt} setIsEditing={setIsEditing} />
     : (
-      <div className="note" key={postIt.id}>
+      <div className="note">
         <span>{ postIt.textContent }</span>
         <div className="note-footer">
           <small>{ postIt.date }</small>

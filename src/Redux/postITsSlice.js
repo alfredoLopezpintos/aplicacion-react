@@ -13,6 +13,7 @@ const postITsSlice = createSlice({
         textContent: action.payload.value,
         date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
         deleted: false,
+        system_date: new Date(),
       };
       state.posts = [...state.posts, newPostIT];
     },
@@ -22,6 +23,7 @@ const postITsSlice = createSlice({
         textContent: action.payload.textContent,
         date: action.payload.date,
         deleted: false,
+        system_date: action.payload.system_date,
       };
       const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
       state.posts = [...newPosts, newPostIT];
@@ -32,6 +34,7 @@ const postITsSlice = createSlice({
         textContent: action.payload.textContent,
         date: action.payload.date,
         deleted: true,
+        system_date: action.payload.system_date,
       };
       const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
       state.posts = [...newPosts, newPostIT];
@@ -45,6 +48,7 @@ const postITsSlice = createSlice({
         textContent: action.payload.textContent,
         date: action.payload.date,
         deleted: false,
+        system_date: action.payload.system_date,
       };
       const newPosts = state.posts.filter((post) => post.id !== action.payload.id);
       state.posts = [...newPosts, newPostIT];
@@ -55,6 +59,7 @@ const postITsSlice = createSlice({
         textContent: action.payload.textContent,
         date: action.payload.date,
         deleted: action.payload.deleted,
+        system_date: action.payload.system_date,
       };
       state.posts = [...state.posts, newPostIT];
     },
