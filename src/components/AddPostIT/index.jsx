@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleNewPostITChange } from '../../Redux/handleTextSlice';
 import { addPostIT } from '../../Redux/postITsSlice';
-import './PostIT.css';
+import HomeCSS from '../Home/Home.module.css';
+import AddPostITCSS from './AddPostIT.module.css';
 
 export const AddPostIT = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export const AddPostIT = () => {
     }
   };
   return (
-    <div className="note new">
+    <div className={AddPostITCSS.note}>
       <textarea
         id="1000"
         cols="10"
@@ -30,7 +31,7 @@ export const AddPostIT = () => {
         maxLength="200"
         onChange={handleChange}
       />
-      <div className="note-footer">
+      <div className={HomeCSS.footer}>
         <small>
           {characterLimit - value.value.length}
           {' '}
@@ -38,7 +39,7 @@ export const AddPostIT = () => {
         </small>
         <button
           type="button"
-          className="save"
+          className={HomeCSS.save}
           onClick={handleAddPostIT}
         >
           Save

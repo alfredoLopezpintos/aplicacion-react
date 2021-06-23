@@ -3,6 +3,8 @@ import { React } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleNewPostITChange } from '../../Redux/handleTextSlice';
 import { editPostIT } from '../../Redux/postITsSlice';
+import PostITsEditCSS from './PostITsEdit.module.css';
+import HomeCSS from '../Home/Home.module.css';
 
 const PostITsEdit = ({ post, setIsEditing }) => {
   const dispatch = useDispatch();
@@ -30,25 +32,25 @@ const PostITsEdit = ({ post, setIsEditing }) => {
   };
 
   return (
-    <div className="note edit">
+    <div className={PostITsEditCSS.note}>
       <textarea
-        className="textareaEdit"
+        className={PostITsEditCSS.textarea}
         cols="10"
         rows="8"
         placeholder="Type here..."
         maxLength="200"
         onChange={handleChange}
       />
-      <div className="note-footer">
+      <div className={HomeCSS.footer}>
         <small>
           {characterLimit - value.value.length}
           {' '}
           Remaining
         </small>
         <div>
-          <button onClick={() => setIsEditing(false)} type="button" className="save">Cancel</button>
-          <div className="dividerEdit" />
-          <button type="button" className="save" onClick={handleEditPostIT}>Save</button>
+          <button onClick={() => setIsEditing(false)} type="button" className={HomeCSS.save}>Cancel</button>
+          <div className={PostITsEditCSS.divider} />
+          <button type="button" className={HomeCSS.save} onClick={handleEditPostIT}>Save</button>
         </div>
       </div>
     </div>

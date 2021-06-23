@@ -1,0 +1,27 @@
+.textarea {
+    border: none;
+    resize: none;
+    background-color: #d79467;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.divider{
+    width:10px;
+    height:auto;
+    display:inline-block;
+}
+
+.note {
+    background-color: #d79467;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: pre-wrap;
+}

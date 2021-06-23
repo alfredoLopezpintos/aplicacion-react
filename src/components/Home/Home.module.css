@@ -1,0 +1,46 @@
+.divider{
+    width:20px;
+    height:auto;
+    display:inline-block;
+}
+
+.container {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.icon {
+    size: "1.3em";
+}
+.icon:hover {
+    cursor: pointer;
+}
+
+.list {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(250px, 1fr)
+	);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.save {
+    background-color: #e1e1e1;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+}
+.save:hover {
+    background-color: #ededed;
+    cursor: pointer;
+}
