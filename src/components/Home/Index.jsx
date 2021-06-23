@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import './Home.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomeCSS from './Home.module.css';
 import { reloadPostITs } from '../../Redux/postITsSlice';
 import PostsComponent from '../PostITs/index';
 import TrashComponent from '../TrashBin/index';
@@ -29,11 +29,12 @@ export const Home = () => {
       console.log(err);
     }
   }, [posts]);
+
   return (
     <Router>
-      <div className="Home">
+      <div className={HomeCSS.Home}>
         <header className="Home-header">
-          <div className="container">
+          <div className={HomeCSS.container}>
             <HeaderComponent />
             <Switch>
               <Route path="/" exact component={PostsComponent} />
