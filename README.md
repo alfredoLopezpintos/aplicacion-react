@@ -35,11 +35,13 @@ Here we will deliver more info about anything needed or important related to the
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
-    "react-redux": "^7.2.4",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.0",
-    "redux-logger": "^3.0.6",
-    "web-vitals": "^1.1.2"
+* `"react-icons": "^4.2.0"`:  used for the icons of "delete", "permanently delete", "undo",
+                            "empty trash bin" and "full trash bin"
+* `"react-redux": "^7.2.4"`: used for the offer of hooks like `useSelector()`, `useDistpatch()`, `useStore()`.
+* `"react-router-dom": "^5.2.0"`: used to establish and redirect the navigation between index and trash bin pages.
+* `"react-scripts": "4.0.3"`: this package includes scripts and configuration used by Create React App.
+* `"redux": "^4.1.0"`: used to manage the state of the application.
+* `"redux-logger": "^3.0.6"`: used to print in the terminal all dispatched actions. 
+* `"web-vitals": "^1.1.2"`: used to measure the UX performance. It came in the package of `create-react-app`.
+
 All project dependencies have a reason. This project uses React, Redux, React-Router, Jest & Redux Toolkit as a must for the code challenge. Also we are using React icons for a better UI experience and to facilitate the design development of the app. The other dependencies are for development purposes only.
