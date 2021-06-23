@@ -29,12 +29,16 @@ Perfect, you are ready to start. Happy coding! :smiley:
 ## Technical decisions made by the group :ballot_box_with_check:
 Here we will deliver more info about anything needed or important related to the project.
 ### Dependencies
-    "@reduxjs/toolkit": "^1.5.1",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+* `"reduxjs/toolkit": "^1.5.1"`: 
+simplify the use of the redux. its used to work whith the store
+* `"testing-library/react": "^11.2.7"`:
+this library specializes in creating tests for React. its used to test the data in the render.
+* `"testing-library/user-event": "^12.8.3"`:
+tries to simulate the real events that would happen in the browser as the user interacts with it. It is used for a more advanced simulation on testing.
+* `"react": "^17.0.2"`:
+is the dependency we work with to generate the application.
+* `  "react-dom": "^17.0.2"`:
+handles the DOM logic in javascript, allowing for rendering.
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
