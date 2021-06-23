@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { React } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleNewPostITChange } from '../../Redux/handleTextSlice';
+import { handleEditPostITChange } from '../../Redux/handleTextSlice';
 import { editPostIT } from '../../Redux/postITsSlice';
 import PostITsEditCSS from './PostITsEdit.module.css';
 import HomeCSS from '../Home/Home.module.css';
@@ -13,15 +13,15 @@ const PostITsEdit = ({ post, setIsEditing }) => {
 
   const handleChange = (event) => {
     if (characterLimit - event.target.value.length >= 0) {
-      dispatch(handleNewPostITChange(event.target.value));
-      handleNewPostITChange('');
+      dispatch(handleEditPostITChange(event.target.value));
+      handleEditPostITChange('');
     }
   };
   const handleEditPostIT = () => {
-    if (value.value.trim().length > 0) {
+    if (value.textEditPostIt.trim().length > 0) {
       const newPostIT = {
         id: post.id,
-        textContent: value.value,
+        textContent: value.textEditPostIt,
         date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}${' '}Edited`,
         deleted: false,
       };
@@ -43,7 +43,7 @@ const PostITsEdit = ({ post, setIsEditing }) => {
       />
       <div className={HomeCSS.footer}>
         <small>
-          {characterLimit - value.value.length}
+          {characterLimit - value.textEditPostIt.length}
           {' '}
           Remaining
         </small>
