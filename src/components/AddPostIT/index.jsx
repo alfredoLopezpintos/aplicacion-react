@@ -10,7 +10,7 @@ export const AddPostIT = () => {
   const characterLimit = 200;
   const value = useSelector((state) => state.AddPostIT);
   const handleAddPostIT = () => {
-    if (value.value.trim().length > 0) {
+    if (value.textAddPostIt.trim().length > 0) {
       dispatch(addPostIT(value));
       document.getElementById(1000).value = '';
       dispatch(handleNewPostITChange(''));
@@ -33,7 +33,7 @@ export const AddPostIT = () => {
       />
       <div className={HomeCSS.footer}>
         <small>
-          {characterLimit - value.value.length}
+          {characterLimit - value.textAddPostIt.length}
           {' '}
           Remaining
         </small>

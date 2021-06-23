@@ -4,13 +4,17 @@ import { createSlice } from '@reduxjs/toolkit';
 const handleTextSlice = createSlice({
   name: 'handleText',
   initialState: {
-    value: '',
+    textAddPostIt: '',
+    textEditPostIt: '',
     edit: false,
     post: '',
   },
   reducers: {
     handleNewPostITChange: (state, action) => {
-      state.value = action.payload;
+      state.textAddPostIt = action.payload;
+    },
+    handleEditPostITChange: (state, action) => {
+      state.textEditPostIt = action.payload;
     },
     handleNewID: (state, action) => {
       state.id = action.payload;
@@ -27,7 +31,7 @@ const handleTextSlice = createSlice({
 });
 
 export const {
-  handleNewPostITChange, handleNewID, handleEdit, cancelHandleEdit,
+  handleNewPostITChange, handleEditPostITChange, handleNewID, handleEdit, cancelHandleEdit,
 } = handleTextSlice.actions;
 
 export default handleTextSlice.reducer;
