@@ -10,7 +10,7 @@ const postITsSlice = createSlice({
     addPostIT: (state, action) => {
       const newPostIT = {
         id: nanoid(),
-        textContent: action.payload.value,
+        textContent: action.payload.textAddPostIt,
         date: `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`,
         deleted: false,
       };
