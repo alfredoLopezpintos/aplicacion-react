@@ -33,7 +33,7 @@ const List = (...value) => {
     ? <EditPostIt post={postIt} setIsEditing={setIsEditing} />
     : (
       <div className={PostITsCSS.note} key={postIt.id}>
-        <span>{ postIt.textContent }</span>
+        <span className={PostITsCSS.scroll}>{ postIt.textContent }</span>
         <div className={HomeCSS.footer}>
           <small>{ postIt.date }</small>
           <div>
