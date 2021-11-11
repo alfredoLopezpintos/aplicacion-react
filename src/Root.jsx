@@ -6,7 +6,7 @@ import TrashComponent from './components/TrashBin/index';
 export const Root = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/" component={HomeComponent} />
+      <Route path="/aplicacion-react" component={HomeComponent} />
       <Route path="/TrashBin" component={TrashComponent} />
     </Switch>
   </BrowserRouter>

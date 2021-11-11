@@ -37,7 +37,7 @@ export const Home = () => {
           <div className={HomeCSS.container}>
             <HeaderComponent />
             <Switch>
-              <Route path="/" exact component={PostsComponent} />
+              <Route path="/aplicacion-react" exact component={PostsComponent} />
               <Route path="/TrashBin" component={TrashComponent} />
             </Switch>
           </div>

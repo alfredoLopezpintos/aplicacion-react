@@ -13,7 +13,7 @@ export const Header = () => {
 
   return (
     <div className={HeaderCSS.header}>
-      <Link className={HeaderCSS.home} to="/">
+      <Link className={HeaderCSS.home} to="/aplicacion-react">
         <b>PostITs</b>
       </Link>
       <Link className={HeaderCSS.trash} to="/TrashBin">
