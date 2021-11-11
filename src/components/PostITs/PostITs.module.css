@@ -12,4 +12,5 @@
 
 .scroll {
     overflow-y: auto;
+    margin-bottom: 5px;
 }
