@@ -11,7 +11,7 @@ export const TrashBin = () => {
 
   const result = posts.map((post) => post.deleted && (
     <div className={TrashBinCSS.note} key={post.id}>
-      <span>{ post.textContent }</span>
+      <span className={TrashBinCSS.scroll}>{ post.textContent }</span>
       <div className={HomeCSS.footer}>
         <small>{ post.date }</small>
         <div>
