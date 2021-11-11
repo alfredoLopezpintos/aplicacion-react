@@ -19,7 +19,7 @@ Before starting, make sure your computer has up-to-date versions of the followin
 * Clone the repository in the directory of your preference using `git clone https://github.com/alfredoLopezpintos/aplicacion-react.git`
 * Type `cd aplicacion-react` to change your current directory to the repository folder.
 * Open this repository with Visual Studio Code.
-* Type `npm install` to install all of the project dependencies.
+* Type `npm install` to install all of the project dependencies. Only if there is errors you may need to run `npm audti fix` too.
 * Start the project locally running: `npm start`
 ### This will load the following site:
 ![Post_IT_Home](https://user-images.githubusercontent.com/84357625/121825858-10d75500-cc8b-11eb-9b46-1d997a83b05b.PNG)
